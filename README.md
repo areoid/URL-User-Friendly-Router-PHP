@@ -9,8 +9,12 @@ In this case, you have a routes configuration for your configuration. For exampl
 // ruotes configuration
 // Ex: $routes[uri/param] = controller/menthod/params
 
-$routes['/']            = 'HomeController/index';
-$routes['/view/:num']   = 'ViewController/detail/#1';
+$routes['/']                        = 'HomeController/index';
+$routes['/view/:num']               = 'ViewController/detail/#1';
+
+// for custom regex in your paramaters
+// and dont forget to make group in  your regex "()" 
+$routes['/view/([a-z]+)/page:num']  = 'ViewController/customDetail/#1/#2';
 
 ?>
 ```
