@@ -26,9 +26,6 @@ class Router {
 				$this->valRoutes = $GLOBALS['routes'][$key];
 
 				// advance checking
-				$temp_uri = str_replace($match_route[0], '', $uri);
-
-				// advance checking
 				// Fix bug
 				$temp_uri = str_replace($match_route[0], '', $uri);
 				if(strlen($temp_uri) > 1) {
