@@ -28,13 +28,16 @@ class Router {
 				// advance checking
 				$temp_uri = str_replace($match_route[0], '', $uri);
 
+				// advance checking
+				// Fix bug
+				$temp_uri = str_replace($match_route[0], '', $uri);
 				if(strlen($temp_uri) > 1) {
-					header("HTTP/1.0 404 Not Found");
-					die("404");
+					continue;
 				}
-				
-				$result = self::getControllerMethodParams($match_route);
-				break;
+				else {
+					$result = self::getControllerMethodParams($match_route);
+					break;
+				}
 			}
 		}
 		return $result;
